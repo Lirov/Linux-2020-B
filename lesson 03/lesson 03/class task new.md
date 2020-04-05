@@ -1,3 +1,4 @@
+```bash
 zev@Zev-Desktop:~$ ls
 zev@Zev-Desktop:~$ pwd
 /home/zev
@@ -25,3 +26,4 @@ zev@Zev-Desktop:~/Desktop/Practice03/FolderToDelete$ cd ..
 zev@Zev-Desktop:~/Desktop/Practice03$ rm -r FolderToDelete/
 zev@Zev-Desktop:~/Desktop/Practice03$ ls -l
 one.txt
+```
