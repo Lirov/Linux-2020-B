@@ -1,24 +1,120 @@
-# lesson 01
+# Linux-2020
+
+## Lesson 01:
+* Intro to linux OS. 
+* Installation of VM
+* Installation of Linux machine: Ubuntu, Parrot, Kali etc..
+
+## Lesson 02:
+* Full screen of VM. 
+* Linux File system
+* Command - line introduction
+  * pwd
+  * Man
+  * whatis
+  * Clear
+  * Top
+  * df -h
+  * ls
+  * cd
+  * tree
+
+
+## Lesson 03:
+* Permissions
+  * user
+  * group
+  * other
+  * read
+  * write
+  * execute
+* Commands
+  * Mkdir
+  * Touch
+  * Rmdir
+  * Rm
+  * mv
+
+## Lesson 04:
+* User
+  * whoami
+  * adduser
+  * passwd
+  * usedel
+* Structure of `/etc/passwd` file
+* Structure of `/etc/shadow` file
+* sudo -i
+* cat
+* nano
+
+## Lesson 05:
+* Less
+* Wc
+* Grep
+* Egrep
+* Regular expressions
+  * `^`
+  * `$`
+  * `*`
+  * `.`
+
+## Lesson 06:
+* Echo command
+* Exit code
+* Variables
+* Operations:
+  * expr
+  * []
+  * [[]]
+* Increment & Decrement
+* Run bash file
+
+## Lesson 07:
+* File or Directory
+* If statement
+* Short if statement
+* Numbers vs Strings comparison
+* read - input
+* Programs: 
+  * Max number
+  * Median number
+ 
+## Lesson 08:
+* seq
+* Lists
+* For loop
+* Mested for loop
+* While loop
+* Infinite loop
+* Programs:
+  * Check all files in directory
+  * Pyramid
+ 
+## Lesson 09:
+* Until loop
+* Programs:
+   * Swap two numbers
+   * Fibonacci series
+   * Palindrome 
+* String length
+* Functions
+* Functions with parameters
+* Nested functions
+* Null in function
+
+## Lesson 10:
+* shuf - random
+* **Rock, Paper, Scissors game.** 
+
+## Lesson 11:
+* I/O redirections:
+ * stdin
+ * stdout
+ * stderr
+* Test preparation
 ___
-# <a name="linux-introduction"></a>Linux Introduction
 
-**Table of Contents**
-
-* [What is Linux?](#what-is-linux)
-* [Why use Linux?](#why-use-linux)
-* [Where is Linux deployed?](#where-is-linux-deployed)
-* [Linux Distros](#linux-distros)
-* [Virtual Box](#virtual-box)
----
-
-## What is Linux?
-
-Quoting from [Wikipedia](https://en.wikipedia.org/wiki/Linux)
-
->Linux is a family of free and open-source software operating systems built around the Linux kernel. Typically, Linux is packaged in a form known as a Linux distribution (or distro for short) for both desktop and server use. 
-The defining component of a Linux distribution is the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Many Linux distributions use the word "Linux" in their name. The Free Software Foundation uses the name GNU/Linux to refer to the operating system family, as well as specific distributions, to emphasize that most Linux distributions are not just the Linux kernel, and that they have in common not only the kernel, but also numerous utilities and libraries, a large proportion of which are from the GNU project
-
-<br>
+# Lesson 1
 
 ## Why use Linux?
 
@@ -29,49 +125,14 @@ The defining component of a Linux distribution is the Linux kernel, an operating
 * Well defined hierarchy and permissions to allow networking across different groups and sites
 * Strong set of commands to automate repetitive manual tasks
 
-## Where is Linux deployed?
-
-* Servers
-* Supercomputers
-    * To quote [TOP500 article on wikipedia](https://en.wikipedia.org/wiki/TOP500), "Since November 2017, all the listed supercomputers (100% of the performance share) use an operating system based on the Linux kernel"
-* Embedded/IoT devices like POS, Raspberry Pi
-* Smart phones
-	* Android - built on top of Linux kernel
-	* iOS - Unix based
-* Personal and Enterprise Computers
-* And many more uses, thanks to being open source
-* [Usage Share of Operating Systems](https://en.wikipedia.org/wiki/Usage_share_of_operating_systems)
-
-## Linux Distros
-There are various Linux flavors called 'distribution' (distro for short), to cater the needs of beginners to advanced users as well as highly customized as per end use case
-
-* There are [hundreds of known distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions)
-* One can keep track of them at [distrowatch](https://distrowatch.com/)
-    * [Statistics of various Linux Distros](https://distrowatch.com/dwres.php?resource=popularity)
-
-
-# Virtual Box
-### Virtualbox network Connection Settings
-#### NAT (network address translation)
-The vm and the host system share a single network identity that is not visible outside the network. 
-Select NAT if you do not have a separate IP address for the vm, but you want to be able to connect to the internet. 
-#### Bridged networking
-The vm has direct access to an external Ethernet network. The vm must have its own IP address on the external network. Other computers in the network can then communicate directly with the vm. 
 ___
-# lesson 02
-___
+# Lesson 02
+
 ## Command line introduction
-### How to make ubuntu full screen
-devices -> insert guest additions
 
-# Command Line Interface
-
-Command Line Interface (CLI) allows us interact with computer using text commands
-
-For example: the `cd` command would help navigating to a particular directory and `ls` command to view contents of a directory. In GUI, you'd use an explorer for directory navigation by point and click, directory contents are shown by default
 
 ### PWD 
-pwd - print name of current/working directory
+`pwd` - print name of current/working directory
 
 ```sh
 raya@raya-VirtualBox:/$ pwd 
@@ -100,13 +161,13 @@ raya@raya-VirtualBox:/$ clear
 ```
 
 ### Top
-top - display Linux processes
+`top` - display Linux processes
 
 ### df -h
-df - report file system disk space usage
+`df` - report file system disk space usage
 
 ### LS
-ls - list directory contents
+`ls` - list directory contents
 ```sh
 raya@raya-VirtualBox:/$ pwd
 /
@@ -116,7 +177,7 @@ boot  dev    home  initrd.img.old  lib64  media       opt  root  sbin  srv   sys
 
 ```
 ##### Show hidden files
--a, --all : do not ignore entries starting with .
+`ls -a`, `ls -all` : do not ignore entries starting with .
 ```sh
 raya@raya-VirtualBox:~$ ls -a
 .              .config           .ICEauthority  Public                       .vboxclient-seamless.pid
@@ -127,13 +188,13 @@ raya@raya-VirtualBox:~$ ls -a
 .cache         .gnupg            .profile       .vboxclient-draganddrop.pid
 
 ```
--l     use a long listing format
+`ls -l`     use a long listing format
 
-* d = directory (תקייה)
+* `d`rwxr-xr-x = directory (תקייה)
 ```sh
 drwxr-xr-x 3 raya raya 4096 Mar 25 11:34 Desktop
 ```
-* `-` is file
+* `-`rw-r--r-- is file
 ```sh
 -rw-r--r-- 1 raya raya 8980 Mar 22 00:46 examples.desktop
 ```
@@ -154,7 +215,17 @@ drwxr-xr-x 2 raya raya 4096 Mar 22 00:57 Videos
 ##### Combine the two commands: 
 ```sh
 raya@raya-VirtualBox:~$ ls -la
-total 108
+drwxr-xr-x 1 zev  zev  4096 Apr 27 09:02 .
+drwxr-xr-x 1 root root 4096 Mar 18 11:12 ..
+-rw------- 1 zev  zev  2184 Jun 29 09:15 .bash_history
+-rw-r--r-- 1 zev  zev   220 Mar 18 11:12 .bash_logout
+-rw-r--r-- 1 zev  zev  3771 Mar 18 11:12 .bashrc
+drwxrwxrwx 1 zev  zev  4096 Mar 18 11:12 .cache
+drwx------ 1 zev  zev  4096 Mar 18 11:12 .config
+-rw-r--r-- 1 zev  zev   807 Mar 18 11:12 .profile
+-rw-r--r-- 1 zev  zev     0 Mar 25 11:42 .sudo_as_admin_successful
+drwxrwxrwx 1 zev  zev  4096 Apr 27 09:02 .vscode-server
+drwxrwxrwx 1 zev  zev  4096 Apr  5 08:52 Desktop
 ```
 
 ## cd 
@@ -207,7 +278,7 @@ raya@raya-VirtualBox:~$ tree
 
 ## Linux file system
 
-# Linux file system
+## Linux file system
 <img src="https://www.rs-online.com/designspark/rel-assets/dsauto/temp/uploaded/linux-filesystem.png?w=815"/>
 
 1. The entire Linux directory structure starting at the top (/) root directory.
@@ -252,7 +323,7 @@ These are shareable, read-only files, including executable binaries and librarie
 ## /var	
 Variable data files are stored here. This can include things like log files, MySQL, and other database files, web server data files, email inboxes, and much more.
 
-# <a name="absolute-and-relative-paths"></a>Absolute and Relative paths
+## Absolute and Relative paths
 
 >An **absolute or full path** points to the same location in a file system regardless of the current working directory. To do that, it must contain the root directory.
 
@@ -262,7 +333,7 @@ Variable data files are stored here. This can include things like log files, MyS
 * `../design` relative path
 
 ___
-# lesson 03
+# Lesson 03
 ___
 
 
@@ -349,7 +420,7 @@ newA.txt  newB.txt
 ```
 
 
-# Permissions - הרשאות 
+## Permissions - הרשאות 
 
 <img src="https://www.guru99.com/images/PermissionsConcept.png"/>
 
@@ -372,12 +443,6 @@ Any other user who has access to a file. This person has neither created the fil
 
 Every file and directory in your UNIX/Linux system has following 3 permissions defined for all the 3 owners discussed above.
 
-#### Read:
-This permission give you the authority to open and read a file. Read permission on a directory gives you the ability to lists its content.
-#### Write: 
-The write permission gives you the authority to modify the contents of a file. The write permission on a directory gives you the authority to add, remove and rename files stored in the directory. Consider a scenario where you have to write permission on file but do not have write permission on the directory where the file is stored. You will be able to modify the file contents. But you will not be able to rename, move or remove the file from the directory.
-#### Execute: 
-In Windows, an executable program usually has an extension ".exe" and which you can easily run. In Unix/Linux, you cannot run a program unless the execute permission is set. If the execute permission is not set, you might still be able to see/modify the program code(provided read & write permissions are set), but not run it.
 
 <img src='https://qph.fs.quoracdn.net/main-qimg-0f76c00cf97852795a234a730bf9e4fd' height=250/>
 
@@ -391,7 +456,7 @@ In Windows, an executable program usually has an extension ".exe" and which you 
 * Owner can read, write and execute
 * Usergroup can read and write
 * World can only read
-This is shown as -rwxrw-r-
+This is shown as -rwx rw- r--
 
 ### Chmod
 
@@ -403,28 +468,11 @@ or: chmod u=rwx
 chmod u+rwx
 chmod 147
 ```
-### Class Task
-
-# Class task - Command line
-1. Create new folder in `Desktop` : `Practice03`
-2. Create new `first.txt` file in this folder. 
-3. Change the permissions of the file so everyone will be able to read and write. 
-4. Change the name of the file `first.txt` to `one.txt`
-5. Remove permissions of `first.txt` so only the user can read and write. 
-6. Print permissions of the file.
-7. Create a folder inside `Practice03` named: `FolderToDelete`
-8. Inside `FolderToDelete` create 3 files `a.txt`, `b.txt`, `c.txt`. 
-9. Go back to `Prcatice03` and delete the folder `FolderToDelete`. 
-
-### Good luck!
-
-
 ___
-# lesson 04
+# Lesson 04
 ___
-## User
 
-# User in linux
+### User in linux
 
 ### whoami
 whoami - print effective userid
@@ -447,7 +495,7 @@ root@raya-VirtualBox:~# whoami
 root
 ```
 ---
-# Add a new user:
+## Add a new user:
 ### useradd
 * Try to add a user to the system, but we have no permissions: 
 ```bash
@@ -551,7 +599,6 @@ $6$oloCWpfW$q4beNkhVne7Bzy67kt8dkC83JfPG2LjauphiIWFFTz8q58QYsDq//e8psyTdjJhHsV8k
 
 ## Cat
 
-# Cat 
 cat - concatenate files and print on the standard output
 
 `Cat` can open the data in a file. 
@@ -631,8 +678,6 @@ Hello dear students! I am concatenated
 
 ## Nano
 
-# Nano
-
 nano - Nano's ANOther editor, an enhanced free Pico clone
 
 Nano is a text editor
@@ -665,7 +710,7 @@ This line was added by nano
 
 
 ___
-# lesson 05
+# Lesson 05
 ___
 
 ## Less
@@ -870,10 +915,12 @@ raya@raya-VirtualBox:~/Desktop/Lesson05$ ps awx | grep root
 
 > grep -r [Pattern][name_of_folder]
 
-> -r, --recursive
-> Read all files under each directory, recursively, following symbolic links only if they are on the
-> command line. Note that if no file operand is given, grep searches the working directory. This is
-> equivalent to the -d recurse option.
+```
+-r, --recursive
+ Read all files under each directory, recursively, following symbolic links only if they are on the
+ command line. Note that if no file operand is given, grep searches the working directory. This is
+ equivalent to the -d recurse option.
+```
 
 Search for each folder and file in a chosen folder.
 note: here we search for `passwd` in `/usr/bin` folder. Binary files cannot show their content. only one file had a match.
@@ -1040,7 +1087,7 @@ linux
 lanox
 ```
 ___
-# lesson 06
+# Lesson 06
 ___
 
 ## Echo - הד
@@ -1173,10 +1220,10 @@ Bob Levi
 #! /bin/bash
 
 echo Enter num1
-read n1
+read n1 = 5
 
 echo Enter num2
-read n2
+read n2 = 7
 
 echo "The numbers are:"
 echo n1 = $n1
@@ -1448,7 +1495,7 @@ chmod 777 file_name.sh
 
 
 ___
-# lesson 07
+# Lesson 07
 ___
 
 ## File or directory:
@@ -1603,7 +1650,7 @@ fi
 
 counter=0
 
-while [ "$counter" -lt 4 ]
+while [ "$counter" -lt 4 ] # <
 do
 	echo "Round number: $counter"
 	counter=`expr $counter + 1`
@@ -1678,18 +1725,21 @@ read -p "Enter second string: " str2
 ```bash
 #! /bin/bash
 
-echo "Enter num1:"
-read num1
-
-echo "Enter num2:"
-read num2
-
-echo "Enter num3:"
-read num3
+read -p "enter num1 : " num1 # num1 = 5
+read -p "enter num2 : " num2 # num2 = 7
+read -p "enter num3 : " num3 # num3 = 3
 
 echo "$num1, $num2, $num3"
 
-# num1 = 5, num2 = 7, num3 = 3
+if [ $num1 -gt $num2 ] && [ $num1 -lt $num3] && echo $num1
+
+if [ $num2 -gt $num1 ] && [ $num2 -lt $num3] && echo $num2
+
+if [ $num3 -gt $num1 ] && [ $num3 -lt $num2] && echo $num3
+
+
+
+
 
 # get num1 if it is the middle number:
 if [ $num1 -gt $num2 ] && [ $num1 -lt $num3 ]
@@ -1732,7 +1782,7 @@ fi
 ```
 
 ___
-# lesson 08
+# Lesson 08
 ___
 
 ## seq - sequence
@@ -1832,9 +1882,9 @@ done
 
 i=1
 
-for lesson in Linux Cyber HTML JavaScript MySql
+for Lesson in Linux Cyber HTML JavaScript MySql
 do
-	echo "Lesson $i : $lesson"
+	echo "Lesson $i : $Lesson"
 	((i++))
 done
 ```
@@ -2048,6 +2098,9 @@ exit 0
 # * * *
 # * * * *
 # * * * * *
+# * * * * * *
+# * * * * * * *
+# * * * * * * * *
 
 LIMIT=8 # constant number
 
@@ -2055,7 +2108,7 @@ for ((row=1; row<=LIMIT; row++))
 do
 	for ((col=1; col<=row; col++))
 	do
-	echo -n "* "
+		echo -n "* "
 	done
 	echo
 done
@@ -2096,7 +2149,7 @@ read -p "Enter a number: " number
 
 i=0
 
-while [ $i -le 10 ]
+while [ $i -le 10 ] #10
 do
 	echo "$number * $i =  " $((number*i))
 	((i++))
@@ -2215,7 +2268,7 @@ image-1590578325.jpg  image-1590578340.jpg
 ```
 
 ___
-# lesson 09
+# Lesson 09
 ___
 
 # until loop
@@ -2599,7 +2652,7 @@ n2 # I am n2
 ```
 
 ___
-# lesson 10
+# Lesson 10
 ___
 
 # Shuf
@@ -2701,11 +2754,11 @@ Create the game:
 7. In the end of the game: show the winner.
 
 ___
-# lesson 11
+# Lesson 11
 ___
 
 ___
-# lesson 12
+# Lesson 12
 ___
 
 # I/O redirection
