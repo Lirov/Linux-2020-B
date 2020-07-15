@@ -1472,7 +1472,7 @@ echo $[--num]   # 5
 echo $num	# 5
 ```
 
-# Bash - "Bourne Again Shell"
+## Bash - "Bourne Again Shell"
 
 - Developed for GNU project.
 - Bash is compatible with **Bourne Shell** - is the original standard for UNIX shell.
@@ -1849,7 +1849,7 @@ raya@raya-VirtualBox:~$ seq -w 5 10
 10
 ```
 
-# For loop
+## For loop
 
 ## Arrays - מערכים
 
@@ -1871,7 +1871,7 @@ do
 done
 ```
 
-# Examples:
+## Examples:
 
 ## 1. Print a list of 5 lessons with their number in for-in loop:
 
@@ -2114,7 +2114,7 @@ do
 done
 ```
 
-# While
+## While
 
 ### Basic while
 
@@ -2271,7 +2271,7 @@ ___
 # Lesson 09
 ___
 
-# until loop
+## until loop
 
 **Until** loop is the oppsite of **while** loop.
 As long as the condition is false - the loop will continue running.
@@ -2323,7 +2323,7 @@ Enter a number: 4
 i = 11
 ```
 
-# Exercises
+## Exercises
 
 ### Program to swap two numbers:
 
@@ -2455,7 +2455,7 @@ Repeat password:    1234
 Success!
 ```
 
-# string length
+## string length
 
 ```bash
 #! /bin/bash
@@ -2481,7 +2481,7 @@ len=`expr length "$str"`
 echo "str: $str, len: $len"
 ```
 
-# Functions in bash
+## Functions in bash
 
 why use functions?
 
@@ -2655,7 +2655,7 @@ ___
 # Lesson 10
 ___
 
-# Shuf
+## Shuf
 
 > shuf - generate random permutations
 
@@ -2739,7 +2739,7 @@ raya@raya-VirtualBox:~/Desktop/Lesson10$ shuf -e one two three -n 1
 two
 ```
 
-# Rock Paper scissors - אבן נייר ומספריים
+## Rock Paper scissors - אבן נייר ומספריים
 
 Create the game:
 
@@ -2761,7 +2761,7 @@ ___
 # Lesson 12
 ___
 
-# I/O redirection
+## I/O redirection
 
 <img height=300 src="Untitled.png"/>
 
